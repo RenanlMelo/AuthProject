@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import { FormRegister } from "../../components/FormRegister";
 
-export const Register = () => {
+export const RegisterPage = () => {
   return (
-    <div>Register</div>
-  )
-}
+    <div>
+      <FormRegister />
+    </div>
+  );
+};

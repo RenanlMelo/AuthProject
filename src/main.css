@@ -2,70 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-    background: black;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
+html,
+body {
+  background: black;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 #root {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-@property --gradient-angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-
-:root {
-    --clr-1: #191919;
-    --clr-2: #101010;
-    --clr-3: #ff0066;
-    --clr-4: #d500f9;
-    --clr-5: #0057f9;
-  }
-
-.card {
-    background: var(--clr-1);
-    border-radius: 0.5rem;
-    position: relative;
-  }
-  
-.card::before,
-.card::after {
-    content: "";
-    position: absolute;
-    inset: -0.5rem;
-    z-index: -1;
-    background: conic-gradient(
-      from var(--gradient-angle),
-      var(--clr-3),
-      var(--clr-4),
-      var(--clr-5),
-      var(--clr-4),
-      var(--clr-3)
-    );
-    border-radius: inherit;
-    animation: rotation 5s linear infinite;
-  }
-  
-  .card::after {
-    filter: blur(7rem);
-  }
-  
-  @keyframes rotation {
-    0% {
-      --gradient-angle: 0deg;
-    }
-    100% {
-      --gradient-angle: 360deg;
-    }
-  }
