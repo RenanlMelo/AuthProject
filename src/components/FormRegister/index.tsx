@@ -37,7 +37,7 @@ export const FormRegister = () => {
         <div className="card w-96 h-96 p-3 sm:p-8 flex justify-center items-center flex-col">
           <h1 className="text-4xl text-white p-4">Sign Up</h1>
           <form
-            className="bg-white p-8 flex justify-center items-center flex-col gap-y-10"
+            className="bg-white rounded-md p-8 flex justify-center items-center flex-col gap-y-10"
             onSubmit={handleSubmit}
           >
             <div className="form_control">
@@ -59,7 +59,7 @@ export const FormRegister = () => {
                   setEmail(e.target.value);
                   console.log(email);
                 }}
-                className="border-b border-black py-2 outline-none"
+                className="border-b border-black pt-4 outline-none"
               />
             </div>
             <div className="form_control">
@@ -81,12 +81,15 @@ export const FormRegister = () => {
                   setPassword(e.target.value);
                   console.log(password);
                 }}
-                className="border-b border-black py-2 outline-none"
+                className="border-b border-black pt-4 outline-none"
               />
             </div>
-            <button className="btn_submit">
+            <button className="border border-black px-4 py-2 rounded-md">
               {loading ? loading : "Sign Up"}
             </button>
+            <a href="/" className="border border-black px-4 py-2 rounded-md">
+              Clique para fazer login
+            </a>
           </form>
         </div>
       </section>

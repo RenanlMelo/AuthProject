@@ -34,10 +34,10 @@ export const FormLogin = () => {
   return (
     <>
       <section className="w-full h-full flex justify-center items-center">
-        <div className="card w-96 h-96 p-3 sm:p-8 flex justify-center items-center flex-col">
+        <div className="w-96 h-96 p-3 sm:p-8 flex justify-center items-center flex-col">
           <h1 className="text-4xl text-white p-4">Sign In</h1>
           <form
-            className="bg-white p-8 flex justify-center items-center flex-col gap-y-10"
+            className="bg-white rounded-md p-8 flex justify-center items-center flex-col gap-y-10"
             onSubmit={handleSubmit}
           >
             <div className="form_control">
@@ -58,7 +58,7 @@ export const FormLogin = () => {
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
-                className="border-b border-black py-2 outline-none"
+                className="border-b border-black pt-4 outline-none"
               />
             </div>
             <div className="form_control">
@@ -79,12 +79,18 @@ export const FormLogin = () => {
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
-                className="border-b border-black py-2 outline-none"
+                className="border-b border-black pt-4 outline-none"
               />
             </div>
-            <button className="btn_submit">
+            <button className="border border-black px-4 py-2 rounded-md">
               {loading ? "Loading..." : "Sign In"}
             </button>
+            <a
+              href="/users/create"
+              className="border border-black px-4 py-2 rounded-md"
+            >
+              Clique para se cadastrar
+            </a>
           </form>
         </div>
       </section>
