@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLoginAuthContext } from "../../contexts/authLogin";
-import { useNavigate } from "react-router-dom";
 
 export const MessageDisplay = () => {
   const [loading, setLoading] = useState(true);
   const context = useLoginAuthContext();
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (context.signedIn === true) setLoading(false);
   });
 
   const handleLogOut = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("refreshToken");
-    navigate("/");
+    context.signOut();
   };
 
   return (
